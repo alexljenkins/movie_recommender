@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-6 my-auto">
+        <div class="header-content mx-auto">
+            <!-- Contact -->
+                    <form id="contactForm" name="sentMessage" novalidate="novalidate" action="/recommend">
+                          <div class="form-group">
+                            <input class="form-control" id="movie1" name="movie1" type="text" placeholder="Favourate Movie " required="required" data-validation-required-message="Please enter a movie.">
+                            <p class="help-block text-danger"></p>
+                          </div>
+                          <div class="form-group">
+                            <input class="form-control" id="movie2" name="movie2" type="text" placeholder="Second Favourate Movie " required="required" data-validation-required-message="Please enter a movie.">
+                            <p class="help-block text-danger"></p>
+                          </div>
+                          <div class="form-group">
+                            <input class="form-control" id="movie3" name="movie3" type="text" placeholder="Third Favourate Movie " required="required" data-validation-required-message="Please enter a movie.">
+                            <p class="help-block text-danger"></p>
+                          <div class="form-group">
+                             <input class="form-control" id="movie4" name="movie4" type="text" placeholder="Worst Movie of All Time " required="required" data-validation-required-message="Please enter a movie.">
+                             <p class="help-block text-danger"></p>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                          <div id="success"></div>
+                          <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">What Should I Watch?</button>
+                        </div>
+                    </form>
+                  </div>
+              </div>
+      <div class="col-lg-6 my-auto">
+          <img src="../static/img/girl-320262_1280.png" class="" alt="" style="width:147%; height:147%;"> <!-- class="img=fluid" -->
+              </div>
+            </div>
+          </div>
+</header>
+{% endblock %}
+<!-- <form action="/results">
+    <h1 class="mb-3">Tell me what you like...</h1>
+    <input type="text" name="movie1" placeholder="Enter a Movie">
+    <input type="text" name="rating1"placeholder="Rating 0-5"><br>
+    <input type="text" name="movie2">
+    <input type="text" name="rating2"><br>
+    <input type="text" name="movie3">
+    <input type="text" name="rating3"><br>
+    <input type="submit" class="btn btn-outline btn-xl"><br>
+</form> -->
