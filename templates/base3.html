@@ -12,22 +12,26 @@
 
   <!-- Mobile Friendly -->
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
   <!-- Bootstrap from web -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <!-- Bootstrap core CSS -->
+   -->
   <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Custom fonts for this template -->
   <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="../static/vendor/simple-line-icons/css/simple-line-icons.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
   <!-- Plugin CSS -->
   <!-- <link rel="stylesheet" href="../static/device-mockups/device-mockups.min.css"> -->
+
   <!-- Custom styles for this template -->
   <link href="../static/css/new-age.min.css" rel="stylesheet">
-  <!-- my custom css -->
-  <link href="../static/css/my-style.css" rel="stylesheet">
 
 </head>
 
@@ -56,27 +60,13 @@
       </div>
     </div>
   </nav>
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100">
-        <div class="col-lg-6 my-auto">
-          <div class="header-content mx-auto">
-              {% block content %}
-
-              {% endblock %}
-          </div>
-        </div>
-        <div id="aibot" class="col-lg-6 my-auto container h-100">
-            <!-- <img id="ai-img" src="../static/img/girl-320262_1280.png" class="ai-img" style="width:147%; height:147%;" alt=""> -->
-                                                <!-- class="img=fluid" style="width:147%; height:147%;" -->
-                </div>
-              </div>
-            </div>
-  </header>
 
 
 
 
+  {% block content %}
+
+  {% endblock %}
 
 
 

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from recommender import deep_recommender
+import recommender
 from rate_me import movie_list_gen
 
 
@@ -36,9 +36,11 @@ def multi_profiling():
 def recommend():
     user_input = request.args
     print(user_input)
+
+    movie_recommendation = recommender.main(user_input)
     # user_input = dict(user_input).values
     # user_top_movies = list(user_input)[0:-2]
     # user_worst_movies = list(user_input)[-1:]
     #
     # recommended_list = deep_recommender(1, user_top_movies, user_worst_movies)
-    return render_template('recommended.html', movie="The Matrix")
+    return render_template('recommended.html', movie="The Matrix") #movie_recommendation

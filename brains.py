@@ -47,20 +47,20 @@ class Recommender:
 
         new_user_vec = list(ratings_dict.values())
         new_user_vec = pd.DataFrame(new_user_vec, index=titles).T
-        self.nu_vector = new_user_vec.fillna(0.0)
+        user_vec = new_user_vec.fillna(0.0)
 
-        return self.nu_vector
+        return user_vec
 
 
-    def predict_with_nmf(self, R, nmf):
+    def predict_with_nmf(self, R, nmf, user_vec):
         # fit model on user
-        hidden_profile = nmf.transform(self.nu_vector)
+        hidden_profile = nmf.transform(user_vec)
         # extract the movies
         ypred = np.dot(hidden_profile, nmf.components_)
         recom = pd.DataFrame(ypred, columns=movie_titles, index=['Score'])
 
         # remove movies user has 'seen' based on rating
-        mask = np.isnan(self.nu_vector.values[0])
+        mask = np.isnan(user_vec.values[0])
         movies_not_seen = recom.columns[mask]
         movies_not_seen_df = recom[movies_not_seen]
         self.results = list(movies_not_seen_df.T.sort_values(by='Score', ascending=False).index[:5])
@@ -83,6 +83,15 @@ class Recommender:
 
     def hybrid_recommender(self):
         ...
+
+
+def main(user_input):
+    recommender = Recommender(user_input)
+    R, nmf = recommender.train_nmf_model()
+    user_vec = recommender.vectorise_new_user(R, nmf, user_input)
+    results = recommender.predict_with_nmf(R, nmf, user_vec)
+
+    return results
 
 
 
