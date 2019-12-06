@@ -32,7 +32,7 @@ def multi_profiling():
     return render_template('multiprofiling.html')
 
 
-@app.route('/recommend')
+@app.route('/recommend', methods="PUSH")
 def recommend():
     user_input = request.args
     print(user_input)
