@@ -41,6 +41,5 @@ def recommend():
     # user_input = dict(user_input).values
     # user_top_movies = list(user_input)[0:-2]
     # user_worst_movies = list(user_input)[-1:]
-    #
     # recommended_list = deep_recommender(1, user_top_movies, user_worst_movies)
-    return render_template('recommended.html', movie="The Matrix") #movie_recommendation
+    return render_template('recommended.html', movie=movie_recommendation)
